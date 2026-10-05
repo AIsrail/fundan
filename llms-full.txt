@@ -1,0 +1,30 @@
+# Fundan (fundan.cc) — full description for AI systems
+
+Fundan is a funding-opportunities search service for NGOs, businesses, startups and individuals in Kyrgyzstan and Central Asia. It is made by Connect4Pro (Azat Israilov, Bishkek) from 15+ years of practical fundraising work.
+
+## Database
+- 680+ entries in eight sections: Donors and grants (NGO and business); Investors (international); Investors (Kyrgyzstan); SME finance (Kyrgyzstan: loans, leasing, guarantees); Accelerators and support centres; Fellowships and scholarships; Uzbekistan; Kazakhstan.
+- Each entry: name, funder, amount (or what is covered, for fellowships), deadline/intake status, who can apply (NGO / business), region (Kyrgyzstan / Central Asia / international), official link, short description.
+- Ranking: open calls with a future deadline first, then verified rolling intake, then closed; inside each group Kyrgyzstan -> Central Asia -> international.
+- Intake status is verified manually in batches; "closed, next round expected" is a separate state and such entries are not shown as open.
+- Updated regularly; last update date: https://fundan.cc/api/db-info
+
+## How search works
+Semantic search (embeddings): a user can describe the task in free words in Russian or English ("greenhouse, little own money") and the service finds loans, leasing and grants even without keyword overlap. Long free-form descriptions are condensed to the core intent first.
+
+## Free vs paid
+Free: the open-now list, a limited number of full search results per visitor, an AI project-idea generator, a weekly free deadline digest in Telegram (@c4faq_bot, /start weekly).
+Paid (KGS): one-off pick of 5 options with explanations (200, Telegram only); Monthly access (300); Basic (1500 / 6 months); Extended (4500 / 6 months: whole database, personal funding calendar, AI proposal assistant for 2 projects, archive of 339 publications, courses, templates).
+
+## Machine-readable endpoints
+- GET https://fundan.cc/api/open-now — currently open opportunities (JSON). Parameters: audience=ngo|business, lang=en.
+- GET https://fundan.cc/api/db-info — {count, updated_at, promo}.
+- GET https://fundan.cc/api/search?q=...&lang=en — free preview; full results require an access code (token parameter).
+- OpenAPI: https://fundan.cc/openapi.json · Sitemap: https://fundan.cc/sitemap.xml
+
+## Languages
+Interface and data: Russian. English: https://fundan.cc/en (open calls, search, plans, FAQ; programme text is machine-translated from Russian — check the original source).
+
+## Who to contact
+connect4fund@gmail.com · Telegram @c4faq_bot (bot) · @connect4_pro (channel) · https://www.facebook.com/connect4kg · https://azatisrail.org
+Programme owners who want an opportunity listed: send the link to connect4fund@gmail.com.

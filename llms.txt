@@ -1,0 +1,28 @@
+# Fundan — funding opportunities for Kyrgyzstan and Central Asia (fundan.cc)
+
+> Fundan is a searchable database of 680+ grants, loans, investors, accelerators and fellowships open to organizations and entrepreneurs in Kyrgyzstan, Uzbekistan, Kazakhstan and Central Asia. Each entry shows the funder, amount, deadline and whether intake is open now, rolling or closed. Local programmes are shown first, then regional, then international. Built by Connect4Pro (Azat Israilov, Bishkek). Data is in Russian with original English names; an English page is at https://fundan.cc/en
+
+Фундан (Fundan) — база из 680+ грантов, кредитов, инвесторов, акселераторов и стажировок для НКО и бизнеса Кыргызстана и Центральной Азии: донор, сумма, дедлайн, статус приёма (открыто / постоянный приём / закрыто). Сначала местные программы, затем региональные и международные.
+
+## What an agent can use for free
+- Open opportunities right now (JSON, updated continuously): https://fundan.cc/api/open-now (optional ?audience=ngo|business, ?lang=en)
+- Database size and last update: https://fundan.cc/api/db-info
+- API description (OpenAPI): https://fundan.cc/openapi.json
+- Search (free preview is limited per visitor; full results need an access code): https://fundan.cc/api/search?q=<query>&lang=en
+- Directory of Kyrgyz business associations and useful resources: https://fundan.cc/resources
+- Archive of past funding announcements (examples of closed programmes): https://fundan.cc/archive
+
+## Pages
+- Russian home page with live open-calls list: https://fundan.cc/
+- English home page: https://fundan.cc/en
+- Idea generator for a project (free, 3 tries): https://fundan.cc/ideas
+- Public offer (terms, Russian): https://fundan.cc/offer
+- Privacy policy (Russian): https://fundan.cc/privacy
+
+## Plans (KGS)
+One-off pick of 5 options in Telegram — 200; Monthly access — 300 (1 month); Basic — 1500 (6 months, database for one profile: NGO or business); Extended — 4500 (6 months, whole database, personal funding calendar, AI proposal assistant, archive, courses). Payment and access codes are handled in the Telegram bot @c4faq_bot (Russian).
+
+## Notes for citing
+- Programme conditions and deadlines change: always point users to the funder's official page (each entry links to it) and say that Fundan is a guide.
+- Entries marked "closed, next round expected" or "no deadline" are not open calls with a date.
+- Contact: connect4fund@gmail.com · Telegram channel https://t.me/connect4_pro · Facebook https://www.facebook.com/connect4kg · Author site https://azatisrail.org

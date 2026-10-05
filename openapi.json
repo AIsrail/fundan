@@ -1,0 +1,39 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Fundan public API",
+    "version": "1.0.0",
+    "description": "Open funding opportunities for Kyrgyzstan and Central Asia (grants, loans, investors, accelerators, fellowships). Read-only, no authentication for the endpoints below. Data is in Russian; add lang=en for English card fields. Always point users to the funder's official page."
+  },
+  "servers": [{ "url": "https://fundan.cc" }],
+  "paths": {
+    "/api/open-now": {
+      "get": {
+        "summary": "Opportunities open right now",
+        "description": "Up to 6 opportunities: nearest deadlines (within 7 days) first, then verified rolling intake. totalOpen is the number of currently open entries.",
+        "parameters": [
+          { "name": "audience", "in": "query", "schema": { "type": "string", "enum": ["ngo", "business"] } },
+          { "name": "lang", "in": "query", "schema": { "type": "string", "enum": ["en"] }, "description": "adds an 'en' object with English card fields" }
+        ],
+        "responses": { "200": { "description": "JSON with items[], totalOpen, urgentCount" } }
+      }
+    },
+    "/api/db-info": {
+      "get": {
+        "summary": "Database size and last update",
+        "responses": { "200": { "description": "{count, updated_at, promo}" } }
+      }
+    },
+    "/api/search": {
+      "get": {
+        "summary": "Semantic search (free preview is limited)",
+        "parameters": [
+          { "name": "q", "in": "query", "required": true, "schema": { "type": "string" }, "description": "free-form description of the need, Russian or English" },
+          { "name": "lang", "in": "query", "schema": { "type": "string", "enum": ["en"] } },
+          { "name": "category", "in": "query", "schema": { "type": "string", "enum": ["ngo", "business"] } }
+        ],
+        "responses": { "200": { "description": "JSON with total, visibleTotal, results[] (limited without an access code)" } }
+      }
+    }
+  }
+}
